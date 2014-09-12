@@ -1,0 +1,45 @@
+<template name="all">
+  <div class="todo-list">
+    {{> listBefore}}
+    <div class="main">
+    {{#each items}}
+    {{> item}}
+    {{/each}}
+    </div>
+  </div>
+</template>
+
+<template name="active">
+  <div class="todo-list">
+    {{> listBefore}}
+    <div class="main">
+    {{#each items}}
+    {{> item}}
+    {{/each}}
+    </div>
+  </div>
+</template>
+
+<template name="completed">
+  <div class="todo-list">
+    {{> listBefore}}
+    <div class="main">
+    {{#each items}}
+    {{> item}}
+    {{/each}}
+    </div>
+  </div>
+</template>
+
+<template name="listBefore">
+  <header class="list-header">
+    {{> form}}
+  </header>
+</template>
+
+<template name="form">
+  <div class="list-form">
+    <input type="checkbox" id="toggle-all" class="{{checked}}">
+    <input type="text" id="add-todo" class="" placeholder="Что нужно сделать?" autofocus>
+  </div>
+</template>

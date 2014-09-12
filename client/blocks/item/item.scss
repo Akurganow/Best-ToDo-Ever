@@ -1,0 +1,89 @@
+.todo-item {
+  position: relative;
+
+  overflow: hidden;
+
+  height: 65px;
+
+  -webkit-transition: color 0.2s, height 0.2s;
+     -moz-transition: color 0.2s, height 0.2s;
+      -ms-transition: color 0.2s, height 0.2s;
+       -o-transition: color 0.2s, height 0.2s;
+          transition: color 0.2s, height 0.2s;
+  text-align: left;
+
+  color: #333;
+
+  font-size: 24px;
+  &.removed {
+    height: 0;
+  }
+  &.active {
+    .check {
+      &:before {
+        color: rgba(170, 170, 170, 0.2);
+        text-shadow: 0 -1px 0 rgba(170, 170, 170, 0.3);
+      }
+    }
+  }
+  &.completed {
+    .check {
+      &:before {
+        color: #85ada5;
+        text-shadow: 0 1px 0 #669991;
+      }
+    }
+    .title {
+      text-decoration: line-through;
+
+      color: #a9a9a9;
+    }
+  }
+  &:hover {
+    .remove {
+      opacity: 1;
+    }
+  }
+  .check {
+    float: left;
+
+    width: 40px;
+    height: 100%;
+    padding: 20px 11px;
+
+    cursor: pointer;
+
+    font-family: FontAwesome;
+    &:before {
+      content: "\f00c";
+    }
+  }
+  .title {
+    float: left;
+
+    height: 100%;
+    padding: 20px 16px;
+  }
+  .remove {
+    float: right;
+
+    width: 40px;
+    padding: 20px 11px;
+
+    cursor: pointer;
+    -webkit-transition: opacity 0.2s;
+       -moz-transition: opacity 0.2s;
+        -ms-transition: opacity 0.2s;
+         -o-transition: opacity 0.2s;
+            transition: opacity 0.2s;
+
+    opacity: 0;
+
+    font-family: FontAwesome;
+    &:before {
+      content: "\f00d";
+
+      color: rgba(132, 110, 100, 0.8);
+    }
+  }
+}
