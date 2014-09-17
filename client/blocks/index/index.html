@@ -7,6 +7,15 @@
   <meta name="description" content="The best todo list ever.">
   <meta name="keywords" content="todo">
   <meta name="author" content="Akurganow">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-54749025-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 </head>
 
 <template name="index">
@@ -25,28 +34,20 @@
 <template name="indexFooter">
   {{#if display}}
   <footer class="list-footer">
-    {{#if displayActive}}
-    <div class="list-counter">Осталось <strong>{{activeCount}}</strong></div>
-    {{/if}}
     <div class="filters">
       <ul class="unstyled">
         <li><a href="/">Все</a></li>
         <li><a href="active">Активные</a></li>
         <li><a href="completed">Завершенные</a></li>
+        <li class="helper"></li>
       </ul>
     </div>
+    {{#if displayActive}}
+    <div class="list-counter">Осталось <strong>{{activeCount}}</strong></div>
+    {{/if}}
     {{#if displayCompleted}}
     <button id="clear-completed">Удалить завершенные ({{completedCount}})</button>
     {{/if}}
   </footer>
   {{/if}}
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-54749025-1', 'auto');
-    ga('send', 'pageview');
-  </script>
 </template>

@@ -28,6 +28,8 @@ Template.form.events({
 })
 
 $(document).on 'add-todo', ->
+  val = $('#add-todo').val()
+  Inputs.insert({value: val})
   count = Todos.find({}).count({})
   if count is 0
     Todos.insert({title: 'Нихуя не делать', status: 'active'})
