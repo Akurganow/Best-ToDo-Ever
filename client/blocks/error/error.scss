@@ -1,0 +1,16 @@
+.error-container {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  .error-message {
+    width: calc(100% - 50px);
+    margin: 0 25px;
+    padding: 10px 5px;
+
+    color: rgb(214, 69, 69);
+    background-color: rgba(221, 116, 116, 0.25);
+  }
+}

@@ -1,12 +1,23 @@
 .footer {
+  position: relative;
   z-index: 9;
+
+  margin-top: 40px;
+  padding: 0 20px;
 
   text-align: center;
 
   background: #eaeaea;
 
-  font-size: 14px;
-  padding: 0 20px;
+  font-size: 11px;
+  &:before, &:after {
+    display: table;
+
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
   .footer-item {
     display: inline-block;
 
@@ -33,6 +44,12 @@
         color: #333;
       }
     }
+  }
+}
+
+@media(min-width: 480px) {
+  .footer {
+    font-size: 12px;
   }
 }
 @media(min-width: 650px) {

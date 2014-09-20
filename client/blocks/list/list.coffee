@@ -29,12 +29,10 @@ Template.form.events({
 
 $(document).on 'add-todo', ->
   val = $('#add-todo').val()
-  Inputs.insert({value: val})
-  count = Todos.find({}).count({})
-  if count is 0
-    Todos.insert({title: 'Нихуя не делать', status: 'active'})
-  else if count % 2 is 1
-    Todos.insert({title: 'Снова нихуя не делать', status: 'active'})
-  else if count % 2 is 0
-    Todos.insert({title: 'И опять нихуя не делать', status: 'active'})
-  $('#add-todo').val("")
+  if val.trim() == ""
+    $(document).trigger('error', {status: "Введите задачу"})
+  else
+    Inputs.insert({value: val})
+    val = val.fuckitize()
+    Todos.insert({title: val, status: 'active'})
+    $('#add-todo').val("")

@@ -1,13 +1,13 @@
 .wrap {
-  min-height: calc(100% - 34px);
+  min-height: calc(100% - 75px);
 
   text-align: center;
 }
 .container {
   position: relative;
 
-  width: calc(100% - 100px);
-  margin: 40px 50px 0;
+  width: calc(100% - 50px);
+  margin: 40px 25px 0;
   &:before {
     position: absolute;
     z-index: 1;
@@ -64,7 +64,7 @@
     display: block;
     float: none;
 
-    margin: 15px auto;
+    margin: 0 auto 15px;
   }
   .filters {
     position: relative;

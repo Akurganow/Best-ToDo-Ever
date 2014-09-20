@@ -2,31 +2,25 @@ $ ->
   tracker = new Boba
 
   $(document).on 'add-todo', ->
-    val = $('#add-todo').val()
-    
     tracker.push({
       category: "todo",
-      action: "new todo",
-      label: val
+      action: "new todo"
     })
 
-  $(document).on 'remove-todo', (event, obj) ->
+  $(document).on 'remove-todo', ->
     tracker.push({
       category: "todo",
-      action: "remove todo",
-      label: obj.id
+      action: "remove todo"
     })
 
-  $(document).on 'complete-todo', (event, obj) ->
+  $(document).on 'complete-todo', ->
     tracker.push({
       category: "todo",
-      action: "new todo",
-      label: obj.id
+      action: "new todo"
     })
 
-  $(document).on 'activate-todo', (event, obj) ->
+  $(document).on 'activate-todo', ->
     tracker.push({
       category: "todo",
-      action: "new todo",
-      label: obj.id
+      action: "new todo"
     })
