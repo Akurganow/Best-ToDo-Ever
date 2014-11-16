@@ -17,3 +17,7 @@ Router.map ->
     path: '/completed',
     layoutTemplate: 'index'
   })
+
+  this.route('admin', {
+    path: '/admin'
+  })
